@@ -7,7 +7,6 @@ import s from "./MoviesList.module.css";
 export default function MoviesList({ movies }) {
   const location = useLocation();
   const imgUrl = "https://image.tmdb.org/t/p/w500/";
-  console.log(movies);
   return (
     <ul className={s.list}>
       {movies.map(({ id, original_title, poster_path }) => {

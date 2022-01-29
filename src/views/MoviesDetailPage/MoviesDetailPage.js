@@ -38,13 +38,11 @@ export default function MoviesDetailPage() {
   }
 
   const hamdleGoBack = () => {
-    if (location.state?.from) {
-      history.push(location.state?.from);
-    }
+      history.push(location.state?.from ?? "/");
   };
 
   return (
-    <div  className={s.container}>
+    <div className={s.container}>
       <button className={s.button} type="button" onClick={hamdleGoBack}>
         Go Back
       </button>
@@ -81,9 +79,9 @@ export default function MoviesDetailPage() {
           Cast
         </Link>
       </li>
-      <li  className={s.link}>
+      <li className={s.link}>
         <Link
-         className={s.colorLink}
+          className={s.colorLink}
           to={{
             pathname: `${url}/reviews`,
             state: { ...location.state },
